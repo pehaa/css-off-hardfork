@@ -84,7 +84,7 @@ nav a {
   display: inline-block;
   color: inherit;
   padding: 1rem 0.5rem;
-  transition: 0.6s;
+  transition: transform 0.6s;
 }
 
 nav li:nth-child(odd) a:hover {
