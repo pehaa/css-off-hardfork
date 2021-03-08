@@ -23,6 +23,7 @@ body {
   color: #fff;
   font-family: Atma, sans-serif;
   margin: 0;
+  font-size: 1.5rem;
 }
 
 h1,
@@ -30,41 +31,38 @@ h2 {
   margin-top: 0;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 h1,
 h2,
+h1 + p,
 button {
   text-align: center;
   font-family: Bangers, sans-serif;
   letter-spacing: 2px;
 }
 
-header img {
-  display: inline-block;
-  margin: 6rem 0 3rem;
-}
 .wrap {
   margin: auto;
   max-width: 60rem;
   width: calc(100% - 3rem);
 }
 
+.apply .wrap {
+  max-width: 50ch;
+}
+
 header {
   min-height: 100vh;
   background-image: url("../img/blue-splash.png");
   background-position: center center;
-  background-size: conver;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
+
 nav {
   position: fixed;
   top: 0;
@@ -74,6 +72,9 @@ nav {
   z-index: 2;
 }
 nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   text-transform: uppercase;
   justify-content: space-around;
@@ -95,68 +96,49 @@ nav li:nth-child(even) a:hover {
   transform: scale(1.5) rotate(-5deg);
 }
 
-h1 {
+header {
   color: hsl(15, 92%, 59%);
   letter-spacing: 2px;
   text-shadow: 1px 1px 0 white, 2px 2px 0 white;
-  font-size: 10vmin;
 }
-
+h1 {
+  font-size: 10vmin;
+  margin: 0;
+}
+h1 + p {
+  font-size: 5vmin;
+  margin: 0;
+}
 h2 {
-  font-size: 3rem;
+  font-size: 4rem;
   text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-article h2,
-article h1 {
-  font-size: 4rem;
-}
-article h2:after,
-article h1:after {
-  content: "";
-  height: 3rem;
-  margin-top: 2rem;
-  display: block;
-  background-image: linear-gradient(
-      to right,
-      var(--yellow) 50%,
-      transparent 50%
-    ),
-    linear-gradient(to right, var(--yellow) 50%, transparent 50%);
-  background-repeat: repeat-x;
-  background-size: 3rem 1.5rem;
-  background-position: left top, 1.5rem bottom;
-}
-
-article,
-footer {
+section {
+  padding: 4rem 0 6rem;
   border-top: 7px solid rgba(0, 0, 0, 0.06);
   border-bottom: 7px solid rgba(0, 0, 0, 0.06);
-  padding: 4rem 0;
-}
-
-article ul {
-  display: grid;
-  grid-gap: 1.5rem;
-  margin-bottom: 6rem;
 }
 
 .obstacles {
   background: var(--orange);
 }
-.obstacles ul {
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+.grid article {
+  flex: 1;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-.obstacles li {
-  padding: 1rem;
+.obstacles article {
   background: hsl(84, 52%, 46%);
   text-align: center;
   border-radius: 1.5rem;
   transition: 0.4s;
 }
 
-.obstacles li:hover {
+.obstacles article:hover {
   background: var(--yellow);
   color: var(--orange);
 }
@@ -169,30 +151,26 @@ article ul {
   color: inherit;
 }
 
-.prizes li {
+.prizes {
+  background: var(--green);
+}
+.prizes article {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
   border: 2px dashed var(--yellow);
 }
-.prizes li img {
-  display: inline-block;
-  transition: 0.3s;
-}
-.prizes li:hover img {
-  transform: rotate(360deg);
+.prizes article img {
   transition: 1s;
 }
-
-.prizes {
-  background: var(--green);
+.prizes article:hover img {
+  transform: rotate(360deg);
 }
 
-form {
-  display: grid;
-  font-size: 1.5rem;
+.apply img {
+  display: block;
+  margin: auto;
 }
 input {
   font: inherit;
@@ -210,10 +188,6 @@ input[type="email"] {
   color: #fff;
 }
 
-input:focus {
-  background: var(--yellow);
-  color: var(--orange);
-}
 ::-webkit-input-placeholder {
   color: #fff;
 }
@@ -222,65 +196,33 @@ input:focus {
 }
 
 button {
+  border-radius: 0.5rem;
   display: inline-block;
-  height: 10rem;
-  margin: auto;
   cursor: pointer;
   border: none;
-  background: url("../img/submit_bg.png") no-repeat center center;
-  background-size: contain;
-  text-align: center;
-  color: #fff;
+  background-color: var(--yellow);
   font-size: 1.5rem;
   text-shadow: 2px 4px 0 rgba(0, 0, 0, 0.2);
-  transform: rotate(-8deg);
+  padding: 1.5rem;
   transition: 0.6s;
 }
 button:hover,
 button:focus {
-  transform: scale(1.5);
+  background-color: var(--green);
+  color: white;
 }
 
 footer {
+  text-align: center;
   background: var(--yellow);
   color: black;
-  position: relative;
+  padding: 1.5rem;
   border-top: 0.5rem solid rgba(0, 0, 0, 0.06);
-  border-bottom: 0.5rem solid rgba(0, 0, 0, 0.06);
 }
 
-footer .wrap {
-  display: grid;
-}
-footer img {
-  position: absolute;
-  transform: translate3d(0, -60%, 0);
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-footer h2,
-footer h3 {
-  text-align: center;
-}
-
-@media (min-width: 30em) {
-  .prizes ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  form,
-  footer .wrap {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 2rem;
-  }
-  form button,
-  footer h2,
-  footer h3 {
-    grid-column: 1 / span 2;
-  }
-  footer p:first-of-type,
-  address:first-of-type {
-    text-align: right;
+@media (min-width: 640px) {
+  .grid {
+    display: flex;
+    gap: 1.5rem;
   }
 }
