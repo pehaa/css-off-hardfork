@@ -1,6 +1,6 @@
 # Welcome to Triple Dare - The web's messiest challenge!
 
-<img src="https://wptemplates.pehaa.com/assets/alyra/tripledare.svg" style="display: block; margin: auto;">
+![](https://wptemplates.pehaa.com/assets/alyra/tripledare.svg)
 
 ## Bonne nouvelle
 
@@ -10,7 +10,7 @@ Le travail est déjà entamé :
 - La partie HTML est déja mis en place 😅.
 - Les polices google fonts (Atma et Bangers) sont mises en place.
 
-## Très bonne nouvellel
+## Très bonne nouvelle
 
 Il vous reste de gérer la partie CSS.
 
